@@ -13,4 +13,9 @@ body {
 .style {
   font-size: 4vh;
 }
+
+.gap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
 /*# sourceMappingURL=style.css.map */

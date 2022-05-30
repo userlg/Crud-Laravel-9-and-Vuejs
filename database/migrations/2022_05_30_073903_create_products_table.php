@@ -17,10 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->text('description')->nullable();
-            $table->string('photo')->nullable();
             $table->string('type')->nullable();
             $table->integer('qty')->nullable();
-            $table->integer('price')->nullable();
             $table->timestamps();
 
         });
