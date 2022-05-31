@@ -1,5 +1,5 @@
 <template>
     <div>
-        <h2>Delete a Product</h2>
+        <h2 class="text-center text-dark">Delete a Product</h2>
     </div>
 </template>

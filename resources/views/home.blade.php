@@ -16,6 +16,7 @@
         </router-link>
 
         <router-link to="/create" class="mx-1">
+            @csrf
             <h1>Create</h1>
         </router-link>
 

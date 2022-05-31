@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="text-dark ">
         Element not found
     </div>
 </template>
