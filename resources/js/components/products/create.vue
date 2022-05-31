@@ -6,4 +6,17 @@
           <button>Create</button>
       </form>
   </div>
+  <router-view></router-view>
 </template>
+<script>
+export default {
+  data () {
+
+  },
+  methods: {
+    createProduct() {
+       alert('Test successfull');
+    }
+  }
+}
+</script>

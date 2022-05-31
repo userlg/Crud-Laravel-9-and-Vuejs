@@ -17,6 +17,17 @@ Route::get('/', function () {
     return view('home');
 });
 
-Auth::routes();
+Route::get('/create', function () {
+    return view('home');
+});
+
+Route::get('/delete', function () {
+    return view('home');
+});
+
+Route::get('/edit', function () {
+    return view('home');
+});
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import productsIndex from '../components/products/index.vue';
+import listProducts from '../components/products/list.vue';
 
 import productNotFound from '../components/products/notFound.vue';
 
@@ -8,17 +8,21 @@ import editProduct from '../components/products/edit.vue';
 
 import createProduct from '../components/products/create.vue';
 
+import deleteProduct from '../components/products/delete.vue';
+
 
 //All the routes using vue-router in home page
 
 const routes = [
     {
         path: '/',
-        component: productsIndex
+        component: listProducts,
+        name: 'home'
     },
     {
         path: '/:pathMatch(.*)*',
-        component: productNotFound
+        component: productNotFound,
+        name: 'not found'
     },
     {
         path: '/edit',
@@ -27,7 +31,11 @@ const routes = [
     {
         path: '/create',
         component: createProduct
-    }
+    },
+    {
+        path: '/delete',
+        component: deleteProduct
+    },
 ]
 
 
