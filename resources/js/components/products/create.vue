@@ -15,7 +15,6 @@
           placeholder="Name of product"
           class="col-10 mx-auto form-control-lg"
           required
-          oldvalue
         />
 
         <input
@@ -25,7 +24,6 @@
           placeholder="Description of product"
           class="col-10 mx-auto form-control-lg"
           required
-          oldValue
         />
 
         <input
@@ -35,10 +33,9 @@
           placeholder="Type of product"
           class="col-10 mx-auto form-control-lg"
           required
-          oldValue
         />
 
-        <button class="btn btn-primary border border-dark col-5 mx-auto my-4 p2">CREATE</button>
+        <button @click="cleanAssets()" class="btn btn-primary border border-dark col-5 mx-auto my-4 p2">CREATE</button>
       </div>
     </form>
   </div>
@@ -54,7 +51,6 @@ export default {
       product: "",
       description: "",
       type: "",
-      qty: 0,
     };
   },
   methods: {
@@ -76,6 +72,8 @@ export default {
         .catch((error) => {
           console.log(error.response);
         });
+        //---> Back to the main view
+        this.$router.push('/');
     },
   },
 };
