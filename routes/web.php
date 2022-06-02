@@ -6,7 +6,11 @@ use App\Http\Controllers\ProductController;
 
 
 
-Route::resource('products',ProductController::class);
+Route::resource('products', ProductController::class);
+
+Route::get('/edit/{id}', function ($id) {
+    return view('home');
+});
 
 Route::get('/', function () {
     return view('home');

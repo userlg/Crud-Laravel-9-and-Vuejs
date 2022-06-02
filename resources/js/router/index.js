@@ -8,9 +8,6 @@ import editProduct from '../components/products/edit.vue';
 
 import createProduct from '../components/products/create.vue';
 
-import deleteProduct from '../components/products/delete.vue';
-
-
 //All the routes using vue-router in home page
 
 const routes = [
@@ -25,16 +22,12 @@ const routes = [
         name: 'not found'
     },
     {
-        path: '/edit',
+        path: '/edit/:id',
         component: editProduct
     },
     {
         path: '/create',
         component: createProduct
-    },
-    {
-        path: '/delete',
-        component: deleteProduct
     },
 ]
 

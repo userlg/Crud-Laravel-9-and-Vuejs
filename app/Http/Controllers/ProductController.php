@@ -56,7 +56,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+
+        return response()->json($product);
     }
 
     /**
@@ -68,17 +70,21 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+
+        $product->update([
+            'name' => $request['name'],
+            'description' => $request['description'],
+            'type' => $request['type'],
+            'select' => $request['select']
+        ]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+
+        $product->delete();
     }
 }

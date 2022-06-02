@@ -24,10 +24,6 @@
             <h1>Edit</h1>
         </router-link>
 
-        <router-link to="/delete" class=" mx-1">
-            <h1>Delete</h1>
-        </router-link>
-
     </nav>
     <router-view></router-view>
 </div>

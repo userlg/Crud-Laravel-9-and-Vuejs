@@ -35,11 +35,11 @@
           required
         />
 
-        <button @click="cleanAssets()" class="btn btn-primary border border-dark col-5 mx-auto my-4 p2">CREATE</button>
+        <button  class="btn btn-primary border border-dark col-5 mx-auto my-4 p2">CREATE</button>
       </div>
     </form>
   </div>
-  <router-view></router-view>
+
 </template>
 <script>
 
