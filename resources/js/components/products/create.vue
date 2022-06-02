@@ -1,6 +1,6 @@
 <template>
   <div class="my-3  col-6  border border-dark rounded mx-auto p-2 bg-white">
-    <h3 class="text-center text-dark my-4 col-6 mx-auto">Create a product</h3>
+    <h3 class="text-center text-dark my-4 col-4 mx-auto border-bottom border-primary">Create a product</h3>
     <form
       v-on:submit.prevent="createProduct()"
       method="POST"
@@ -38,7 +38,7 @@
           oldValue
         />
 
-        <button class="btn btn-primary col-5 mx-auto my-4 p2">CREATE</button>
+        <button class="btn btn-primary border border-dark col-5 mx-auto my-4 p2">CREATE</button>
       </div>
     </form>
   </div>
