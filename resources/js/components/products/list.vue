@@ -4,7 +4,7 @@
   >
     <div
       class="mx-auto col-7 p-1 d-flex justify-content-center mb-0"
-      v-for="product in products"
+      v-for="product in products.data"
       :key="product.id"
     >
       <div
@@ -18,13 +18,14 @@
         "
       >
         <input
-        v-if="product.select == 1" checked="checked"
+          v-if="product.select == 1"
+          checked="checked"
           type="checkbox"
           class="my-auto"
           @click="completeProduct(product)"
         />
         <input
-        v-if="product.select == 0" 
+          v-if="product.select == 0"
           type="checkbox"
           class="my-auto"
           @click="completeProduct(product)"
@@ -71,12 +72,17 @@
         </form>
       </div>
     </div>
+    <Pagination :data="products" @pagination-change-page="getProducts" class='d-flex mx-auto fle-row my-4 gap-2'/>
   </div>
 </template>
 <script>
 import axios from "axios";
+import LaravelVuePagination from "laravel-vue-pagination";
 
 export default {
+  components: {
+    Pagination: LaravelVuePagination,
+  },
   data() {
     return {
       products: [],
@@ -86,9 +92,9 @@ export default {
     this.getProducts();
   },
   methods: {
-    getProducts() {
+    getProducts(page = 1) {
       axios
-        .get("/products")
+        .get("/products?page=" + page)
         .then((response) => (this.products = response.data))
         .catch((error) => console.log(error.response));
     },
@@ -104,17 +110,15 @@ export default {
       this.getProducts();
     },
     completeProduct(product) {
-
       console.log(product.select);
 
       if (product.select === 1) {
-       var completed = 0;
-      }
-      else { 
+        var completed = 0;
+      } else {
         var completed = 1;
       }
-      product.select = !(product.select);
-      
+      product.select = !product.select;
+
       axios
         .put("/products/" + product.id, {
           name: product.name,
@@ -128,10 +132,11 @@ export default {
         .catch((error) => {
           console.log(error.response);
         });
-        //----> Refresh all products
-        this.getProducts();
+      //----> Refresh all products
+      this.getProducts();
     },
   },
 };
 </script>
+
  
